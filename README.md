@@ -22,21 +22,25 @@ The dataset for given for evalution had 5586 usable images sorted into two categ
 
 ## Results
 
+The intial results of the modeling process revealed biases in areas of the scan which should not be considered when diagnosing pnuemonia, leading to the conculusion that a much wider dataset is needed to train a model to perform this task accurately. Despite this, early modeling efforts showed a strong ability to recognize pneumonia cases in the validation set of images, with some false positives being reported. Overall, this show the potential of a model trained with a much more diverse dataset.
 
+> Examples of abnormal features, implying biases in data
+![Biases appearing in explanations](Lime_explanations.png)
 
 ## Model
 
-The final model was a convolutional nueral network implemented using keras and trained with an early stopping callback to prevent overfitting
+The final model was a convolutional nueral network implemented using keras and trained with an early stopping callback to prevent overfitting. The model trained only on original images with no deformations applied performed better on the validation dataset, despite performing worse on the testing set of images.
 
 
 
 
 ## Recommendations:
 
+A larger, more diverse, set of data is needed to properly train the model, as biases in protocol and positioning seem to be sffecting the model's ability to accurately predict unfamiliar images. While this model is helpful on showing the potential of this technology it is far from a complete solution.
 
 ## Limitations & Next Steps
 
-
+ A request should be made to reasearch hospital interested in this field of study to provide additional data for the purposes of getting a more complete model. With additional data from other hospitals we will be able to reduce bias in the model, and provide more training data for the model to more effectively predict pneumonia, using features that are in the lungs, rather than outside of them.
 
 ### For further information
 
